@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.102.254:8848
+    gateway:
+      routes:
+        - id: api
+          uri: lb://api
+          predicates:
+            - Path=/api/**
+          filters:
+            - StripPrefix=1
