@@ -19,7 +19,7 @@ spring:
               redirect-uris:
                 - "http://zhangzhixing.win"
               post-logout-redirect-uris:
-                - "http://127.0.0.1:9100/"
+                - "http://localhost:9000/auth/"
               scopes:
                 - "openid"
                 - "profile"
