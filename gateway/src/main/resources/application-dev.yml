@@ -5,6 +5,12 @@ spring:
         server-addr: 192.168.102.254:8848
     gateway:
       routes:
+        - id: auth
+          uri: lb://auth
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
         - id: api
           uri: lb://api
           predicates:

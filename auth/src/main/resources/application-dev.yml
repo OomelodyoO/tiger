@@ -1,0 +1,26 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.102.254
+  security:
+    oauth2:
+      authorizationserver:
+        client:
+          messaging-client:
+            registration:
+              client-id: "client"
+              client-secret: "123456"
+              client-authentication-methods:
+                - "client_secret_basic"
+              authorization-grant-types:
+                - "authorization_code"
+                - "refresh_token"
+              redirect-uris:
+                - "http://zhangzhixing.win"
+              post-logout-redirect-uris:
+                - "http://127.0.0.1:9100/"
+              scopes:
+                - "openid"
+                - "profile"
+            require-authorization-consent: true
