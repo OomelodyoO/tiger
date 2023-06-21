@@ -65,3 +65,16 @@ CREATE TABLE IF NOT EXISTS oauth2_authorization
     device_code_metadata          BLOB          DEFAULT NULL,
     PRIMARY KEY (id)
 );
+
+CREATE TABLE IF NOT EXISTS t_user
+(
+    id          VARCHAR(64) NOT NULL,
+    username    VARCHAR(64) NOT NULL,
+    password    VARCHAR(64) NOT NULL,
+    mobile      VARCHAR(20) NOT NULL,
+    status      VARCHAR(64) NOT NULL,
+    create_time DATETIME    NOT NULL,
+    modify_time DATETIME    NOT NULL,
+    PRIMARY KEY (id),
+    UNIQUE (mobile)
+);
